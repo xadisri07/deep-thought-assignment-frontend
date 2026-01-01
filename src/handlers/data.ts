@@ -1,6 +1,3 @@
-import dotenv from 'dotenv';
-dotenv.config();
-
 export async function getProjectData() {
   const url = "https://dev.deepthought.education/assets/uploads/files/files/others/ddugky_project.json";
   console.log(url);
