@@ -1,7 +1,6 @@
 'use client'
 
-import React from 'react'
-import { HelpCircle } from 'lucide-react'
+import { CircleQuestionMark} from 'lucide-react'
 
 export default function FloatingActionButtons() {
   return (
@@ -11,7 +10,7 @@ export default function FloatingActionButtons() {
         className="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl"
         aria-label="Help"
       >
-        <HelpCircle className="text-white w-7 h-7" strokeWidth={2.5} fill="white" />
+        <CircleQuestionMark  className="text-white w-7 h-7" />
       </button>
 
       {/* Meeting/People Around Table Icon */}
