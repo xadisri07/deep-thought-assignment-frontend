@@ -3,13 +3,18 @@
 import React from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card'
 import { Info, Undo2, Redo2, Maximize2, MoreHorizontal } from 'lucide-react'
+import { getAssetByTitle } from '@/constants/data'
 
 export default function StructureCard() {
+  const structureAsset = getAssetByTitle('Structure');
+
+  if (!structureAsset) return null;
+
   return (
     <Card className='shadow-lg p-0 h-[584px] sm:h-[500px] lg:h-[584px] flex flex-col max-sm:h-[400px]'>
       <CardHeader className='bg-black py-1 px-4 rounded-t-xl text-center flex items-center justify-center gap-4 sm:gap-8 max-sm:py-2 max-sm:px-2'>
         <CardTitle className='text-white text-sm sm:text-base lg:text-lg font-semibold'>
-          Structure your Pointers
+          {structureAsset.asset_title}
         </CardTitle>
         <Info className='text-white w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6' />
       </CardHeader>
@@ -17,7 +22,7 @@ export default function StructureCard() {
         {/* Description Section */}
         <div className='mb-3 sm:mb-4 pb-3 sm:pb-4 border-b border-gray-200'>
           <p className='text-xs sm:text-sm text-black'>
-            <span className='font-semibold'>Description :</span> Write a 300 - 400 word article from your thread . Publish your understanding and showcase your understanding to the entire world
+            <span className='font-semibold'>Description :</span> {structureAsset.asset_description}
           </p>
         </div>
 
