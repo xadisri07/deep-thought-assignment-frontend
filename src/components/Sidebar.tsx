@@ -30,7 +30,11 @@ export default function Sidebar() {
     return () => window.removeEventListener('resize', handleResize)
   }, [])
   return (
-    <aside className={`h-[90vh] flex flex-col rounded-tr-3xl rounded-bl-3xl rounded-br-3xl relative z-10 shadow-gray-600 shadow-lg transition-all duration-300 ${isCollapsed ? 'w-24 md:w-24 max-sm:w-10' : 'w-96 md:w-80'}`}>
+    <aside className={`flex flex-col rounded-tr-3xl rounded-bl-3xl rounded-br-3xl shadow-gray-600 shadow-lg transition-all duration-300 ${
+      isCollapsed 
+        ? 'h-[90vh] w-24 md:w-24 max-sm:w-10 relative' 
+        : 'h-[90vh] w-96 md:w-80 absolute left-0 top-0 z-50'
+    }`}>
       {/* Top Black Section */}
       <div className="bg-black rounded-tr-3xl relative">
         <div className="h-16 flex items-center px-4">

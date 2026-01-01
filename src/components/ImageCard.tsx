@@ -2,6 +2,7 @@ import React from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card'
 import Image from 'next/image'
 import { Info } from 'lucide-react'
+import Link from 'next/link'
 
 export default function ImageCard({ title, image, description }: { title: string, image: string, description: string }) {
   return (
@@ -15,7 +16,9 @@ export default function ImageCard({ title, image, description }: { title: string
         </CardHeader>
         <CardContent className='p-0'>
             <p className='text-sm px-2 text-black mb-4 max-sm:text-xs'><span className='font-semibold'>Description:</span> {description}</p>
+            <Link href="https://www.youtube.com/watch?v=0Xr-4PfKVSk" target='_blank'>
             <Image src={image} alt={title} width={2000} height={2000} className='w-full h-full object-cover' />
+            </Link>
         </CardContent>
     </Card>
   )

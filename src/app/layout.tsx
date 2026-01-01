@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
 import FloatingActionButtons from "@/components/FloatingActionButtons";
+import NoticeBoard from "@/components/NoticeBoard";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -38,10 +39,11 @@ export default function RootLayout({
         className={`${poppins.variable} ${geistSans.variable} ${geistMono.variable} antialiased bg-white dark:bg-white h-full flex flex-col`}
       >
         <Header />
-        <div className="flex flex-1 overflow-hidden">
-      <Sidebar />
+        <NoticeBoard />
+        <div className="flex flex-1 overflow-hidden relative">
+          <Sidebar />
           <main className="flex-1 overflow-y-auto">
-        {children}
+            {children}
           </main>
         </div>
         <FloatingActionButtons />

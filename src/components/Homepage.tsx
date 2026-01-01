@@ -1,10 +1,17 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import ImageCard from "./ImageCard";
 import ThreadbuildCard from "./ThreadbuildCard";
 import StructureCard from "./StructureCard";
 import FourSAMethodCard from "./FourSAMethodCard";
+import getProjectData from "@/handlers/data";
 
 export default function Homepage() {
+  useEffect(() => {
+    getProjectData().then((data) => {
+      console.log(data);
+    });
+  }, []);
   return (
     <div className="bg-white ml-14 mr-20 py-6 md:ml-5 md:mr-4 lg:ml-14 lg:mr-20 sm:ml-0 sm:mr-0 max-sm:ml-5 max-sm:mr-4">
       <div className="flex items-center justify-between max-sm:flex-col max-sm:items-start max-sm:gap-2">
